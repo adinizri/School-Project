@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="IsNotExpired">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsNotExpiredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsNotExpiredResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Exist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Pay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="price" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PayResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cvvBelongToCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cvv" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cvvBelongToCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cvvBelongToCreditResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExpireDateBelongToCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExpireDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExpireDateBelongToCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExpireDateBelongToCreditResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="companyBelongToCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="companyBelongToCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="companyBelongToCreditResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IDBelongToCredit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cardNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IDBelongToCreditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDBelongToCreditResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AllCompanies">
+        <s:complexType />
+      </s:element>
+      <s:element name="AllCompaniesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AllCompaniesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsNotExpiredSoapIn">
+    <wsdl:part name="parameters" element="tns:IsNotExpired" />
+  </wsdl:message>
+  <wsdl:message name="IsNotExpiredSoapOut">
+    <wsdl:part name="parameters" element="tns:IsNotExpiredResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExistSoapIn">
+    <wsdl:part name="parameters" element="tns:Exist" />
+  </wsdl:message>
+  <wsdl:message name="ExistSoapOut">
+    <wsdl:part name="parameters" element="tns:ExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaySoapIn">
+    <wsdl:part name="parameters" element="tns:Pay" />
+  </wsdl:message>
+  <wsdl:message name="PaySoapOut">
+    <wsdl:part name="parameters" element="tns:PayResponse" />
+  </wsdl:message>
+  <wsdl:message name="cvvBelongToCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:cvvBelongToCredit" />
+  </wsdl:message>
+  <wsdl:message name="cvvBelongToCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:cvvBelongToCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExpireDateBelongToCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:ExpireDateBelongToCredit" />
+  </wsdl:message>
+  <wsdl:message name="ExpireDateBelongToCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:ExpireDateBelongToCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="companyBelongToCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:companyBelongToCredit" />
+  </wsdl:message>
+  <wsdl:message name="companyBelongToCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:companyBelongToCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBelongToCreditSoapIn">
+    <wsdl:part name="parameters" element="tns:IDBelongToCredit" />
+  </wsdl:message>
+  <wsdl:message name="IDBelongToCreditSoapOut">
+    <wsdl:part name="parameters" element="tns:IDBelongToCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="AllCompaniesSoapIn">
+    <wsdl:part name="parameters" element="tns:AllCompanies" />
+  </wsdl:message>
+  <wsdl:message name="AllCompaniesSoapOut">
+    <wsdl:part name="parameters" element="tns:AllCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CreditCardSoap">
+    <wsdl:operation name="IsNotExpired">
+      <wsdl:input message="tns:IsNotExpiredSoapIn" />
+      <wsdl:output message="tns:IsNotExpiredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Exist">
+      <wsdl:input message="tns:ExistSoapIn" />
+      <wsdl:output message="tns:ExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Pay">
+      <wsdl:input message="tns:PaySoapIn" />
+      <wsdl:output message="tns:PaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cvvBelongToCredit">
+      <wsdl:input message="tns:cvvBelongToCreditSoapIn" />
+      <wsdl:output message="tns:cvvBelongToCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExpireDateBelongToCredit">
+      <wsdl:input message="tns:ExpireDateBelongToCreditSoapIn" />
+      <wsdl:output message="tns:ExpireDateBelongToCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="companyBelongToCredit">
+      <wsdl:input message="tns:companyBelongToCreditSoapIn" />
+      <wsdl:output message="tns:companyBelongToCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IDBelongToCredit">
+      <wsdl:input message="tns:IDBelongToCreditSoapIn" />
+      <wsdl:output message="tns:IDBelongToCreditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AllCompanies">
+      <wsdl:input message="tns:AllCompaniesSoapIn" />
+      <wsdl:output message="tns:AllCompaniesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreditCardSoap" type="tns:CreditCardSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsNotExpired">
+      <soap:operation soapAction="http://tempuri.org/IsNotExpired" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exist">
+      <soap:operation soapAction="http://tempuri.org/Exist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pay">
+      <soap:operation soapAction="http://tempuri.org/Pay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cvvBelongToCredit">
+      <soap:operation soapAction="http://tempuri.org/cvvBelongToCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpireDateBelongToCredit">
+      <soap:operation soapAction="http://tempuri.org/ExpireDateBelongToCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="companyBelongToCredit">
+      <soap:operation soapAction="http://tempuri.org/companyBelongToCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IDBelongToCredit">
+      <soap:operation soapAction="http://tempuri.org/IDBelongToCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllCompanies">
+      <soap:operation soapAction="http://tempuri.org/AllCompanies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CreditCardSoap12" type="tns:CreditCardSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsNotExpired">
+      <soap12:operation soapAction="http://tempuri.org/IsNotExpired" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exist">
+      <soap12:operation soapAction="http://tempuri.org/Exist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Pay">
+      <soap12:operation soapAction="http://tempuri.org/Pay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cvvBelongToCredit">
+      <soap12:operation soapAction="http://tempuri.org/cvvBelongToCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExpireDateBelongToCredit">
+      <soap12:operation soapAction="http://tempuri.org/ExpireDateBelongToCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="companyBelongToCredit">
+      <soap12:operation soapAction="http://tempuri.org/companyBelongToCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IDBelongToCredit">
+      <soap12:operation soapAction="http://tempuri.org/IDBelongToCredit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllCompanies">
+      <soap12:operation soapAction="http://tempuri.org/AllCompanies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreditCard">
+    <wsdl:port name="CreditCardSoap" binding="tns:CreditCardSoap">
+      <soap:address location="http://localhost:59391/webservice/CreditCard.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CreditCardSoap12" binding="tns:CreditCardSoap12">
+      <soap12:address location="http://localhost:59391/webservice/CreditCard.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

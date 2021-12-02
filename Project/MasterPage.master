@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+        }
+        .auto-style2 {
+            height: 146px;
+        }
+        .auto-style3 {
+            height: 20px;
+        }
+        .menu {
+            width: 1088px;
+        }
+        ul {
+             list-style-type: none;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              background-color: #333;
+               }
+
+              li {
+              float: left;
+            width: 200px;
+        }
+
+                li a 
+                {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+
+                    li a:hover:not(.active) 
+                    {
+                        background-color: #111;
+                    }
+
+        .active {
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+<body style="background-color:#114766" >
+    <form id="form1" runat="server">
+    <div style="height: 616px">
+        <table align="center">
+            
+            <tr>
+                
+                <td class="auto-style2">
+                    
+                    &nbsp;<img src="Images/Logo2.png" style="width: 1095px; height: 134px; margin-left: 131px;" class="center" /></td>
+                
+            </tr>
+           
+            <tr>
+                 
+                <td class="auto-style3">
+                   <ul>
+                      <li><a href="Menu2.aspx">Main</a></li>
+                      <li><a href="Store1.aspx">Store</a></li>
+                      <li><a href="MyPlayer.aspx">My Player</a></li>
+                      <li><a href="GlobalScore.aspx">Global Score</a></li>
+                         <li><a href="MyProfile.aspx">My Profile</a></li>
+                        <li><a href="LogIn.aspx">LogOut</a></li>
+                       
+                      </ul>
+
+                
+                </td>
+               
+            </tr>
+            <tr style="height:initial">
+                
+                <td class="auto-style1">
+                    <center>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                    </center>
+                </td>
+                <td>
+
+
+                </td>
+                
+            </tr>
+            <tr>
+                <td class="auto-style1">
+
+                </td>
+                
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

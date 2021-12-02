@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "webservice", ".", "{5520B934-0C82-4AA8-ACA4-9AC4923E56F3}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/webservice"
+		Debug.AspNetCompiler.PhysicalPath = "F:\יב\רום כהן יב'1 פרוייקט\webservice\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\webservice\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/webservice"
+		Release.AspNetCompiler.PhysicalPath = "F:\יב\רום כהן יב'1 פרוייקט\webservice\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\webservice\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "59391"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5520B934-0C82-4AA8-ACA4-9AC4923E56F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5520B934-0C82-4AA8-ACA4-9AC4923E56F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
